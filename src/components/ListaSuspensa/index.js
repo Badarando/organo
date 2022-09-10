@@ -1,9 +1,16 @@
 import './ListaSuspensa.css';
 
 export const ListaSuspensa = (props) => {
+    console.log(props.itens)
+
     return (
-        <dv>
-            <label>{props}</label>
-        </dv>
+        <div className="lista-suspensa">
+            <label>{props.label}</label>
+            <select>
+                {props.itens.map(item => {
+                     return <option key={item}>{item}</option>
+                })}
+            </select>
+        </div>
     )
 }
